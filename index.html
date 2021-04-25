@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
+
+    <!-- FONTAWESOME -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <!-- APP CONTAINER -->
+    <div id="app" class="container">
+        
+        <!-- ASIDE -->
+        <aside class="aside">
+
+            <!-- User -->
+            <section class="user">
+                Test
+            </section>
+
+            <!-- Notifications -->
+            <section class="notifications">
+                Test
+            </section>
+
+            <!-- Search -->
+            <div class="wrap">
+                <section class="search">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </section>
+            </div>
+
+            <!-- Contacts -->
+            <section class="contacts-container">
+                
+                <!-- Contact-list VUE JS-->
+                <ul>
+                    <li class="contact" v-for="(contact, index) in contacts">
+                        <img class="image-cover" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <span class="contact-name">{{contact.name}}</span>
+                    </li>
+                </ul>
+
+            </section>
+
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+            <!-- Header -->
+            <section class="content-header">
+                Test
+            </section>
+
+            <!-- Main -->
+            <section class="content-main">
+
+            </section>
+
+            <!-- Footer -->
+            <section class="content-footer">
+                ciao
+            </section>
+
+
+        </main>
+      
+    </div>
+
+
+    <!-- Per arrivare all'immagine dell'avatar -->
+    <img src="'./img/avatar' + avatar + '.jpg'" alt="">
+    <span> {{ contacts.email }}</span>
+    
+    <!-- SCRIPT -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
