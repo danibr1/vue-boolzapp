@@ -8,7 +8,7 @@
 
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet"> 
 
     <!-- FONTAWESOME -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
@@ -27,9 +27,36 @@
         <!-- ASIDE -->
         <aside class="aside">
 
-            <!-- User -->
-            <section class="user">
-                Test
+            <!-- ASIDE HEADER -->
+            <section class="aside-header style-header">
+
+                <!-- User -->
+                <div class="user">
+                    <img class="user-image-cover" src="img/avatar_2.jpg" alt="Nome Utente">
+                    <span class="contact-name">Nome Utente</span>
+                </div>
+
+                <!-- Menu -->
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-circle-notch"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-comment-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+               
             </section>
 
             <!-- Notifications -->
@@ -46,25 +73,51 @@
 
             <!-- Contacts -->
             <section class="contacts-container">
-                
                 <!-- Contact-list VUE JS-->
                 <ul>
                     <li class="contact" v-for="(contact, index) in contacts">
-                        <img class="image-cover" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <img class="contact-image-cover" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         <span class="contact-name">{{contact.name}}</span>
                     </li>
                 </ul>
 
             </section>
 
-
         </aside>
 
         <!-- MAIN CONTENT -->
         <main class="content">
             <!-- Header -->
-            <section class="content-header">
-                Test
+            <section class="content-header style-header">
+                <!-- User -->
+                <div class="user">
+                    <img class="user-image-cover" src="img/avatar_2.jpg" alt="Nome Utente">
+                    <div class="selected-contact">
+                        <span class="contact-name">Nome Utente</span>
+                        <span class="contact-last-access">Ultimo accesso oggi alle 10.35</span>
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Main -->
@@ -81,12 +134,6 @@
         </main>
       
     </div>
-
-
-    <!-- Per arrivare all'immagine dell'avatar -->
-    <img src="'./img/avatar' + avatar + '.jpg'" alt="">
-    <span> {{ contacts.email }}</span>
-    
     <!-- SCRIPT -->
     <script src="./js/main.js"></script>
 </body>

@@ -5,7 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;    
+    font-weight: 400;
     font-size: 16px;
 }
 
@@ -26,23 +27,57 @@ body{
 /****************************************************************
     UTILITIES 
 *****************************************************************/
+/* HEADER STYLE */
+.style-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 13px;
+}
+.style-header .user{
+    display: flex;
+    align-items: center;
+}
 
-/* Image conver contact */
-.image-cover{
+/* HEADER MENU */
+.menu ul{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    list-style-type: none;
+    margin-right: 10px;
+}
+.menu a{
+    color: #bababa;
+    transition: color 0.2s;
+}
+.menu a:hover{
+    color: #969696;
+}
+
+/* IMAGE COVER CONTACT */
+.contact-image-cover {
     object-fit: cover;
     height: 60px;
     width: 60px;
     border-radius: 50%;
+    margin-right: 10px;
 }
-
-
+.user-image-cover {
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 /****************************************************************
     LAYOUT 
 *****************************************************************/
-/*--------------
+/*----------------------------------------
     CONTAINER
----------------*/
+-----------------------------------------*/
 .container {
     width: 80%;
     min-width: 900px;
@@ -51,20 +86,14 @@ body{
     display: flex;
 }
 
-/*--------------
+/*----------------------------------------
     ASIDE
----------------*/
+-----------------------------------------*/
 .aside{
     flex-basis: 35%;
     display: flex;
     flex-direction: column;
     background:#fff;
-}
-
-/* USER */
-.aside .user{
-    padding: 25px;
-    background: red;
 }
 
 /* NOTIFICATION */
@@ -110,36 +139,48 @@ body{
     align-items: center;
     border-bottom: 1px solid #f7f7f7;
     padding: 10px 20px;
+    transition: background 0.3s;
+    cursor: pointer;
 }
-.contacts-container .contact .contact-name {
-    margin-left: 20px;
+
+.contacts-container .contact:hover{
+    background: #f0f0f0;
 }
 
 
-
-/*--------------
+/*----------------------------------------
     CONTENT
----------------*/
+-----------------------------------------*/
 .content{
     flex-basis: 65%;
     background: #fff;
     display: flex;
     flex-direction: column;
 }
-
 .content-main {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
     background-image: url("../img/mine.jpg");
 }
-
 .content-header,
 .content-footer{
     padding: 25px;
     background: #f4f0ed;
 }
 
+/* CONTENT HEADER */
+.content-header .user .selected-contact {
+    display: flex;
+    flex-direction:column;
+}
+
+
+.content-header .user .contact-last-access {
+    margin-top: 5px;
+    font-size: 0.6rem;
+    color: #7c8285;
+}
 
 
 
