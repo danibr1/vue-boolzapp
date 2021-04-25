@@ -26,10 +26,8 @@
         
         <!-- ASIDE -->
         <aside class="aside">
-
-            <!-- ASIDE HEADER -->
+            <!-- Header -->
             <section class="aside-header style-header">
-
                 <!-- User -->
                 <div class="user">
                     <img class="user-image-cover" src="img/avatar_2.jpg" alt="Nome Utente">
@@ -56,12 +54,10 @@
                         </li>
                     </ul>
                 </div>
-               
             </section>
 
             <!-- Notifications -->
             <section class="notifications">
-                
                 <!-- Icon notifications -->
                 <div class="bell">
                     <i class="fas fa-bell-slash"></i>
@@ -90,9 +86,7 @@
                         <span class="contact-name">{{contact.name}}</span>
                     </li>
                 </ul>
-
             </section>
-
         </aside>
 
         <!-- MAIN CONTENT -->
@@ -132,17 +126,45 @@
 
             <!-- Main -->
             <section class="content-main">
+                <!-- Sent Message -->
+                <div class="row row-sent">
+                    <div class="box sent">
+                        <span class="message">Messaggio inviato</span>
+                        <span class="time-message">10/01/2021 15:50:00</span>
+                    </div>    
+                </div>
 
+                <!-- Received message -->
+                <div class="row">
+                    <div class="box received">
+                        <span class="message">Messaggio ricevuto</span>
+                        <span class="time-message">10/01/2021 15:50:00</span>
+                    </div> 
+                </div>
             </section>
 
             <!-- Footer -->
             <section class="content-footer">
-                ciao
+                <!-- Emoki -->
+                <div class="footer-icon">
+                    <i class="far fa-smile"></i>
+                </div>
+
+                <!-- Text-Box -->
+                <div class="text-box">
+                    <input 
+                        class="text" 
+                        type="text" 
+                        placeholder="Scrivi un messaggio"
+                    >
+                </div>
+
+                <!-- Microphone -->
+                <div class="footer-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </section>
-
-
         </main>
-      
     </div>
     <!-- SCRIPT -->
     <script src="./js/main.js"></script>
