@@ -4,7 +4,12 @@
 const app = new Vue({
     el: '#app',
     data: {
-       // Elenco contatti
+        // Utente loggato
+        user:{
+            name: 'Daniele Bruno',
+            avatar: '_io',
+        },
+        // Elenco contatti
         contacts: [
             {
                 name: 'Michele',
@@ -90,5 +95,17 @@ const app = new Vue({
                 ],
             },
         ],
+        indexContact: 0,
+    },
+    methods: {
+        selContact (index){
+            this.indexContact = index;
+        }
+        
+              
+        // chat(index){
+        //     this.indexContacts = index;
+        //     console.log("Messaggi: ", this.contacts[this.indexContacts].message);
+        // }
     }
 });

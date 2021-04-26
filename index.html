@@ -31,7 +31,7 @@
                 <!-- User -->
                 <div class="user">
                     <img class="user-image-cover" src="img/avatar_2.jpg" alt="Nome Utente">
-                    <span class="contact-name">Nome Utente</span>
+                    <span>{{user.name}}</span>
                 </div>
 
                 <!-- Menu -->
@@ -81,7 +81,11 @@
             <section class="contacts-container">
                 <!-- Contact-list VUE JS-->
                 <ul>
-                    <li class="contact" v-for="(contact, index) in contacts">
+                    <li 
+                        v-for="(contact, index) in contacts"
+                        :class="{ active: index == indexContact }"
+                        @click="selContact(index)"
+                    >
                         <img class="contact-image-cover" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         <span class="contact-name">{{contact.name}}</span>
                     </li>
@@ -95,9 +99,13 @@
             <section class="content-header style-header">
                 <!-- User -->
                 <div class="user">
-                    <img class="user-image-cover" src="img/avatar_2.jpg" alt="Nome Utente">
+                    <img 
+                        class="user-image-cover" 
+                        :src="'./img/avatar' + contacts[indexContact].avatar + '.jpg'" 
+                        :alt="contacts[indexContact].name"
+                    >
                     <div class="selected-contact">
-                        <span class="contact-name">Nome Utente</span>
+                        <span class="contact-name">{{ contacts[indexContact].name }}</span>
                         <span class="contact-last-access">Ultimo accesso oggi alle 10.35</span>
                     </div>
                 </div>
@@ -141,6 +149,15 @@
                         <span class="time-message">10/01/2021 15:50:00</span>
                     </div> 
                 </div>
+                <!-- Received message -->
+                <div class="row">
+                    <div class="box received">
+                        <span class="message">Messaggio ricevuto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut, reiciendis odit alias quisquam sapiente provident culpa inventore ad non officia accusantium fuga ipsam unde atque quam ullam adipisci facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui eos optio autem et tenetur harum numquam illum ipsa. Quia recusandae exercitationem dolorum voluptate fuga iste architecto magnam odit eaque aspernatur?</span>
+                        <span class="time-message">10/01/2021 15:50:00</span>
+                    </div> 
+                </div>
+
+              
             </section>
 
             <!-- Footer -->
@@ -166,7 +183,9 @@
             </section>
         </main>
     </div>
+
     <!-- SCRIPT -->
+    <!-- Main script -->
     <script src="./js/main.js"></script>
 </body>
 </html>

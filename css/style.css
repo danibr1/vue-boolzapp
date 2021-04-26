@@ -171,7 +171,7 @@ SEARCH
 /* ----------------
 CONTACTS 
 ------------------*/
-.contacts-container .contact {
+.contacts-container li {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f7f7f7;
@@ -180,7 +180,7 @@ CONTACTS
     cursor: pointer;
 }
 
-.contacts-container .contact:hover{
+.contacts-container li.active{
     background: #f0f0f0;
 }
 
