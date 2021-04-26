@@ -134,30 +134,18 @@
 
             <!-- Main -->
             <section class="content-main">
-                <!-- Sent Message -->
-                <div class="row row-sent">
-                    <div class="box sent">
-                        <span class="message">Messaggio inviato</span>
-                        <span class="time-message">10/01/2021 15:50:00</span>
-                    </div>    
-                </div>
-
-                <!-- Received message -->
-                <div class="row">
-                    <div class="box received">
-                        <span class="message">Messaggio ricevuto</span>
-                        <span class="time-message">10/01/2021 15:50:00</span>
-                    </div> 
-                </div>
-                <!-- Received message -->
-                <div class="row">
-                    <div class="box received">
-                        <span class="message">Messaggio ricevuto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut, reiciendis odit alias quisquam sapiente provident culpa inventore ad non officia accusantium fuga ipsam unde atque quam ullam adipisci facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui eos optio autem et tenetur harum numquam illum ipsa. Quia recusandae exercitationem dolorum voluptate fuga iste architecto magnam odit eaque aspernatur?</span>
-                        <span class="time-message">10/01/2021 15:50:00</span>
-                    </div> 
-                </div>
-
-              
+               
+                <!-- Messages -->
+                <div 
+                    v-for="message in contacts[indexContact].messages"
+                    class="box"
+                    :class="message.status"
+                >
+                    <span class="message">{{ message.message }}</span>
+                    <span class="time-message">{{ message.date }}</span>
+                </div>    
+        
+                             
             </section>
 
             <!-- Footer -->

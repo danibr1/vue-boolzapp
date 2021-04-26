@@ -194,12 +194,12 @@ CONTACTS
     flex-direction: column;
 }
 .content-main {
-    flex-grow: 1;
-    padding: 45px 80px 20px;
-    overflow-y: auto;
-    background-image: url("../img/mine.jpg");
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    padding: 55px 80px 20px;
+    overflow-y: auto;
+    background-image: url("../img/mine.jpg");
 }
 .content-header,
 .content-footer{
@@ -224,31 +224,13 @@ HEADER
 /* ----------------
 MAIN / MESSAGES
 ------------------*/
-/* Row */
-.row{
-    display: flex;
-}
-/* Row sent message */
-.row-sent {
-    justify-content: end;
-}
-
-/* Style Sent message */
-.sent{
-    background: #ddfabf;
-}
-/* Style Received Message */
-.received {
-    background: #fff;
-}
-
 /* Box and content */
 .box {
-    width: 300px;
-    border-radius: 10px;
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 .box .message{
     margin: 15px 15px 2px 15px;
@@ -262,6 +244,16 @@ MAIN / MESSAGES
     color: #7c8285a1;
 }
 
+/* Style Sent message */
+.sent{
+    background: #ddfabf;
+    align-self: flex-end;
+}
+/* Style Received Message */
+.received {
+    background: #fff;
+    align-self: flex-start;
+}
 /* ----------------
 FOOTER
 ------------------*/

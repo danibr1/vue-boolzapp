@@ -101,11 +101,5 @@ const app = new Vue({
         selContact (index){
             this.indexContact = index;
         }
-        
-              
-        // chat(index){
-        //     this.indexContacts = index;
-        //     console.log("Messaggi: ", this.contacts[this.indexContacts].message);
-        // }
     }
 });
