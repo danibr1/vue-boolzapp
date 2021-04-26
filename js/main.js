@@ -96,10 +96,37 @@ const app = new Vue({
             },
         ],
         indexContact: 0,
+        newMessage: "",
     },
     methods: {
+        
+        // Selezione contatto
         selContact (index){
             this.indexContact = index;
-        }
-    }
+        },
+
+        // Invio nuovo messaggio
+        sendNewMessage(){
+            // Push nuovo messaggio
+            if (this.newMessage != "") {
+                this.contacts[this.indexContact].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    message: this.newMessage,
+                    status: 'sent',
+                })
+            };
+
+            // Reset inputbox
+            this.newMessage = "";
+
+            // Auto Reply
+            setTimeout( () => {
+                this.contacts[this.indexContact].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    message: "Ueeeee Ueeeee",
+                    status: 'received',
+                })
+            }, 1000); // auto reply 1s
+        },
+    },
 });
