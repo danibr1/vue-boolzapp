@@ -233,7 +233,7 @@ MAIN / MESSAGES
     margin-bottom: 10px;
 }
 .box .message{
-    margin: 15px 15px 2px 15px;
+    margin: 10px 10px 5px;
     word-wrap: break-word;
 }
 .box .time-message {

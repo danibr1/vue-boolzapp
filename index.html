@@ -38,19 +38,13 @@
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-circle-notch"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-circle-notch"></i></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-comment-alt"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-comment-alt"></i></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -83,11 +77,11 @@
                 <ul>
                     <li 
                         v-for="(contact, index) in contacts"
-                        :class="{ active: index == indexContact }"
+                        :class="{ active: index === indexContact }"
                         @click="selContact(index)"
                     >
                         <img class="contact-image-cover" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-                        <span class="contact-name">{{contact.name}}</span>
+                        <span class="contact-name">{{ contact.name }}</span>
                     </li>
                 </ul>
             </section>
@@ -114,19 +108,13 @@
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-search"></i></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-paperclip"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-paperclip"></i></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
+                            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -134,7 +122,6 @@
 
             <!-- Main -->
             <section class="content-main">
-               
                 <!-- Messages -->
                 <div 
                     v-for="message in contacts[indexContact].messages"
@@ -143,9 +130,7 @@
                 >
                     <span class="message">{{ message.message }}</span>
                     <span class="time-message">{{ message.date }}</span>
-                </div>    
-        
-                             
+                </div>              
             </section>
 
             <!-- Footer -->
