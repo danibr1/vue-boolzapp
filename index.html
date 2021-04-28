@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Boolzapp</title>
 
     <!-- FONT -->
@@ -67,7 +69,12 @@
             <!-- Search -->
             <div class="wrap">
                 <section class="search">
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input 
+                        type="text" 
+                        placeholder="Cerca o inizia una nuova chat"
+                        v-model.trim= "searchString"
+                        @keyup="searchContact()"
+                    >
                 </section>
             </div>
 
@@ -77,6 +84,7 @@
                 <ul>
                     <li 
                         v-for="(contact, index) in contacts"
+                        v-if="contact.visible"
                         :class="{ active: index === indexContact }"
                         @click="selContact(index)"
                     >
@@ -161,7 +169,9 @@
 
     <!-- SCRIPT -->
     <!-- Day JS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js' integrity='sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/customParseFormat.js"></script>
+
     <!-- Main script -->
     <script src="./js/main.js"></script>
 </body>

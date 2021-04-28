@@ -1,6 +1,11 @@
 /**
- * VUE JS
+ * BOOLZAP
  */
+
+// DAY JS  PLUGIN
+dayjs.extend(dayjs_plugin_customParseFormat);
+
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -96,7 +101,8 @@ const app = new Vue({
             },
         ],
         indexContact: 0,
-        newMessage: "",
+        newMessage: '',
+        searchString: '',
     },
     methods: {
         
@@ -107,26 +113,45 @@ const app = new Vue({
 
         // Invio nuovo messaggio
         sendNewMessage(){
-            // Push nuovo messaggio
-            if (this.newMessage != "") {
-                this.contacts[this.indexContact].messages.push({
+            // Check if it is not empty
+            if (this.newMessage != '') {
+               
+                //ref array messages actived
+                const activeMessage = this.contacts[this.indexContact].messages;
+                
+                // Push new message
+                activeMessage.push({
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     message: this.newMessage,
                     status: 'sent',
-                })
+                });
 
                 // Reset inputbox
-                this.newMessage = "";
+                this.newMessage = '';
     
                 // Auto Reply
                 setTimeout( () => {
-                    this.contacts[this.indexContact].messages.push({
+                    activeMessage.push({
                         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                        message: "Ueeeee Ueeeee",
+                        message: "Ueeeee Ueeeee ",
                         status: 'received',
                     })
                 }, 1000); // auto reply 1s
             };
+        },
+        
+        // Cerca un contatto
+        searchContact() {
+
+            const searchLowerCase = this.searchString.toLowerCase();
+
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(searchLowerCase)){
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
         },
     },
 });
