@@ -145,11 +145,11 @@ const app = new Vue({
 
             const searchLowerCase = this.searchString.toLowerCase();
 
-            this.contacts.forEach(element => {
-                if (element.name.toLowerCase().includes(searchLowerCase)){
-                    element.visible = true;
+            this.contacts.forEach(contact => {
+                if (contact.name.toLowerCase().includes(searchLowerCase)){
+                    contact.visible = true;
                 } else {
-                    element.visible = false;
+                    contact.visible = false;
                 }
             });
         },
